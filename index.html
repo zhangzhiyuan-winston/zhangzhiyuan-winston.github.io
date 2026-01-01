@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Winston Zhang — Portfolio</title>
+  <meta name="description" content="Buy-side style research & quant deliverables: reports, event studies, ML portfolio optimization." />
+
+  <style>
+    :root{
+      --dark-blue:#12436D;
+      --navy:#000080;
+      --mid-blue:#2073BC;
+      --light-blue:#6BACE6;
+      --grid:#d9d9d9;
+      --text:#111;
+      --muted:#555;
+      --bg:#fff;
+      --card:#fff;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Times New Roman", Times, serif;
+      line-height:1.45;
+    }
+    a{color:var(--mid-blue); text-decoration:none;}
+    a:hover{ text-decoration:underline; }
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 60px;}
+    .topbar{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      border-bottom:1px solid var(--grid);
+      padding-bottom:14px; margin-bottom:22px;
+    }
+    .name{
+      font-size:26px; font-weight:700; letter-spacing:.2px; color:var(--navy);
+      margin:0;
+    }
+    .tagline{margin:6px 0 0; color:var(--muted); font-size:15px;}
+    .links{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end; font-size:14px;}
+    .pill{
+      border:1px solid var(--grid);
+      padding:6px 10px;
+      border-radius:999px;
+      background:#fff;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:start;
+      margin:18px 0 26px;
+    }
+    @media (max-width:820px){
+      .hero{grid-template-columns:1fr;}
+      .links{justify-content:flex-start;}
+    }
+
+    .box{
+      border:1px solid var(--grid);
+      border-radius:14px;
+      padding:16px 16px 14px;
+      background:var(--card);
+    }
+    .box h2{
+      margin:0 0 10px;
+      font-size:16px;
+      color:var(--dark-blue);
+      letter-spacing:.2px;
+    }
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .kpi .item{
+      border:1px dashed var(--grid);
+      border-radius:12px;
+      padding:10px 12px;
+    }
+    .kpi .label{font-size:12px; color:var(--muted); margin:0 0 2px;}
+    .kpi .value{margin:0; font-weight:700; color:var(--navy);}
+    .summary p{margin:0 0 10px;}
+    .summary ul{margin:8px 0 0 18px;}
+    .summary li{margin:6px 0;}
+
+    .section{margin-top:18px;}
+    .section h3{
+      margin:22px 0 10px;
+      font-size:16px;
+      color:var(--dark-blue);
+      border-left:4px solid var(--light-blue);
+      padding-left:10px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width:820px){
+      .cards{grid-template-columns:1fr;}
+    }
+    .card{
+      border:1px solid var(--grid);
+      border-radius:14px;
+      padding:14px 14px 12px;
+      background:#fff;
+    }
+    .card .title{
+      display:flex; gap:10px; align-items:baseline; justify-content:space-between;
+      margin:0 0 6px;
+    }
+    .card .title strong{color:var(--navy); font-size:15px;}
+    .badge{
+      font-size:12px;
+      border:1px solid var(--light-blue);
+      color:var(--dark-blue);
+      padding:2px 8px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .card .desc{margin:0 0 8px; color:var(--muted); font-size:14px;}
+    .card ul{margin:0 0 10px 18px;}
+    .card li{margin:6px 0;}
+    .card .actions{display:flex; gap:10px; flex-wrap:wrap; font-size:14px;}
+    .btn{
+      display:inline-block;
+      border:1px solid var(--grid);
+      border-radius:10px;
+      padding:6px 10px;
+      background:#fff;
+    }
+    .btn.primary{
+      border-color:var(--mid-blue);
+      color:var(--navy);
+    }
+
+    .skills{
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .chip{
+      border:1px solid var(--grid);
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:13px;
+      color:#222;
+      background:#fff;
+    }
+
+    footer{
+      margin-top:26px;
+      border-top:1px solid var(--grid);
+      padding-top:12px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <h1 class="name">Winston Zhang (张)</h1>
+        <p class="tagline">Buy-side Tech Research · Quant-driven · ML Portfolio Optimization (Nasdaq-100)</p>
+      </div>
+      <div class="links">
+        <a class="pill" href="#" target="_blank" rel="noreferrer">Resume (PDF)</a>
+        <a class="pill" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="pill" href="mailto:your@email.com">Email</a>
+        <a class="pill" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="box summary">
+        <h2>What I deliver (buy-side style)</h2>
+        <p>
+          I build research deliverables that are <strong>decision-ready</strong>: clear thesis, defined risks,
+          measurable catalysts, and reproducible analysis.
+        </p>
+        <ul>
+          <li><strong>Research notes / initiations:</strong> thesis → debate → KPIs → catalysts → risk plan</li>
+          <li><strong>Event studies:</strong> pre/post windows, control days, volume & price structure</li>
+          <li><strong>ML portfolio optimization:</strong> multi-model comparison with turnover & cost awareness</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Highlights</h2>
+        <div class="kpi">
+          <div class="item">
+            <p class="label">Focus</p>
+            <p class="value">US Tech / Semi / SaaS</p>
+          </div>
+          <div class="item">
+            <p class="label">Tooling</p>
+            <p class="value">Python · Bloomberg/Eikon</p>
+          </div>
+          <div class="item">
+            <p class="label">Style</p>
+            <p class="value">Data-driven · rigorous</p>
+          </div>
+          <div class="item">
+            <p class="label">Output</p>
+            <p class="value">Reports · Charts · Code</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Featured projects</h3>
+      <div class="cards">
+
+        <div class="card">
+          <div class="title">
+            <strong>VEEV — Buy-side Initiation</strong>
+            <span class="badge">Equity research</span>
+          </div>
+          <p class="desc">Vertical SaaS in regulated life sciences; thesis, debate map, KPI dashboard, risk plan.</p>
+          <ul>
+            <li>Logic tree: downside anchor vs upside torque; key debates & signposts</li>
+            <li>Risk pricing: IV vs realized, skew, event reaction quality</li>
+            <li>What-to-watch: NRR/attach, bookings/billings proxy, margin/FCF durability</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="#" target="_blank" rel="noreferrer">Read report (PDF)</a>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Slides / Notes</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="title">
+            <strong>ORCL — Intraday Event Study (5s)</strong>
+            <span class="badge">Microstructure</span>
+          </div>
+          <p class="desc">Control day vs event day; gap annotation; RTH windows with volume/price structure.</p>
+          <ul>
+            <li>12/17 as control; 12/19 event day; 12/18 close vs 12/19 open gap box</li>
+            <li>Clean charting: consistent x-axis, grid, and buy-side style annotations</li>
+            <li>Takeaways: reaction quality, fade/hold behavior, liquidity zones</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="#" target="_blank" rel="noreferrer">View charts</a>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Code / Notebook</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="title">
+            <strong>Nasdaq-100 — Multi-model ML Portfolio Optimization</strong>
+            <span class="badge">Quant / ML</span>
+          </div>
+          <p class="desc">End-to-end pipeline: data → models → portfolio construction → evaluation.</p>
+          <ul>
+            <li>Models: traditional baselines + tree/sequence models (as applicable)</li>
+            <li>Metrics: Sharpe/Sortino, drawdown, turnover, transaction cost sensitivity</li>
+            <li>Reproducible: datasets, scripts, and experiment logs</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="#" target="_blank" rel="noreferrer">Project write-up</a>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Repo</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="title">
+            <strong>Templates — Event Commentary & Tracking</strong>
+            <span class="badge">Repeatable process</span>
+          </div>
+          <p class="desc">A reusable framework to write fast, structured hot-topic notes with data support.</p>
+          <ul>
+            <li>Structure: what happened → why it matters → who wins/loses → tradeable signals</li>
+            <li>Checklist: catalysts, positioning, valuation anchors, scenario triggers</li>
+            <li>Examples: NVDA China export policy / supply chain notes (placeholder)</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="#" target="_blank" rel="noreferrer">Read samples</a>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Template</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Skills</h3>
+      <div class="box">
+        <div class="skills">
+          <span class="chip">Equity Research (Buy-side)</span>
+          <span class="chip">Financial Modeling</span>
+          <span class="chip">Python (pandas / numpy)</span>
+          <span class="chip">ML (sklearn / XGBoost)</span>
+          <span class="chip">Portfolio Construction</span>
+          <span class="chip">Event Study</span>
+          <span class="chip">Options / Volatility Reading</span>
+          <span class="chip">Bloomberg / Refinitiv</span>
+          <span class="chip">Data Engineering</span>
+          <span class="chip">Backtesting</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>About</h3>
+      <div class="box">
+        <p style="margin:0;">
+          MSc International Finance (University of Glasgow). I focus on tech fundamentals + market microstructure,
+          and I turn research into deliverables that can be directly used in investment decisions.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> Winston Zhang</div>
+      <div>Last updated: <span id="d"></span></div>
+    </footer>
+  </div>
+
+  <script>
+    const now = new Date();
+    document.getElementById("y").textContent = now.getFullYear();
+    document.getElementById("d").textContent = now.toISOString().slice(0,10);
+  </script>
+</body>
+</html>
